@@ -1,0 +1,108 @@
+@import '../../index.scss';
+
+
+.container{
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999999999999;
+    background-color: rgba(0,0,0,0.6);
+    opacity: 0;
+    visibility: hidden; 
+    transition: all 0.3s ease ;
+
+
+    .shopping-cart{
+        background-color: white;
+        position:absolute;
+        right: 0;
+        transition: all 0.3s ease ;
+        width: 75%;
+        height: 100%;
+        padding-top: 40px;
+
+        .close-btn{
+            padding: 10px;
+            position:absolute;
+            top:0;
+            right: 10px;
+            cursor: pointer;
+            color:orange;
+            font-size: 25px;
+        }
+
+    }
+
+    .total,.header{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        align-items: center;
+
+    }
+
+   .btn{
+    padding: 10px;
+    text-align: center;
+    button{
+        @include button1();
+        width: 90%;
+        padding: 10px 0px;
+    }
+   }
+   
+        
+}
+    
+
+.no-items{
+    text-align: center;
+    padding: 30px 0px;
+
+}
+.remove-all{
+    cursor: pointer;
+}
+
+.remove-all:hover{
+    transition: all 0.3s ease-in-out;
+    color: $orangePrimary;
+}
+
+.opacity{
+    opacity: 1;
+    visibility: visible;
+
+}
+
+.show-car{
+    transform: translateX(0%);
+    
+}
+
+
+
+@media screen and ( min-width:767px ) {
+    .container{
+
+        .shopping-cart{
+            width:40% ;
+        }
+
+    }
+}
+
+
+
+@media screen and ( min-width:1024px ) {
+    .container{
+
+        .shopping-cart{
+            width:25% ;
+        }
+
+    }
+}

@@ -1,0 +1,67 @@
+@import '../../index.scss';
+
+.navbar{
+    background-color: $blackPrimary;
+    color: $whitePrimary;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+
+    .hamburgerBtn{
+        display: block;
+    }
+    ul{
+        display: none;
+        
+    }
+    .shoppingCart{
+        cursor: pointer;
+    }
+}
+
+
+@media screen and ( min-width:768px ) {
+
+    .navbar {
+       .logo{
+        transform: translateX(-200px);
+       }
+
+       
+    }
+
+}
+
+
+@media screen and ( min-width:1024px ) {
+    .navbar{
+        padding: 30px 150px ;
+        ul{
+            display: flex; 
+            padding-right: 20px;
+            width: 60%;
+            justify-content: space-evenly;
+            align-items:center ;
+            font-size: 14px;
+            margin-right: 80px;
+            color: $whitePrimary;
+           
+           li:hover{
+            transition: all 0.3s ease-in;
+            cursor: pointer;
+            color: $orangePrimary;
+           }
+        }
+        .hamburgerBtn{
+            display: none;
+        }
+        .logo{
+            transform: translateX(-00px);
+        }
+    }
+
+}
+
+
+

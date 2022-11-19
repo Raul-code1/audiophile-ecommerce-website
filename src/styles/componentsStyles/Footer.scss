@@ -1,0 +1,122 @@
+@import '../../index.scss';
+
+footer{
+    background-color: $blackPrimary;
+    color: $whitePrimary;
+    padding:40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+
+    .logo-with-optioms{
+        display: flex;
+        flex-direction: column;
+        padding-top: 15px;
+        
+        ul{
+            padding-top: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            li:hover{
+                cursor: pointer;
+                color: $orangePrimary;
+                transition: all 0.5s ease;
+            }
+            
+        }
+    }
+
+
+    .info-and-networks{
+        p{
+            color: grey;
+            padding-top: 20px;
+        }
+        
+        .networks{
+            padding-top: 20px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+
+            span:hover{
+                color: $orangePrimary;
+                transition:all 0.4s ease-in;
+            }
+        }
+
+        
+
+
+       
+    }
+
+    
+}
+
+
+@media screen and ( min-width:767px ) {
+
+    footer{
+
+        .logo-with-optioms{
+            text-align: justify;
+            
+            ul{
+                flex-direction: row;
+                align-items: center;
+                
+            }
+        }
+
+        .info-and-networks{
+
+            p{
+                text-align: justify;
+            }
+
+            div{
+                display: flex;
+                justify-content: space-between;
+                padding-top: 30px;
+            }
+        }
+    }
+
+}
+
+
+@media screen and ( min-width:1024px ) {
+
+    footer{
+
+        .logo-with-optioms{
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            ul{
+                padding-top: 0px;
+            }
+        }
+
+        .info-and-networks{
+
+            .info{
+                width: 50%;
+                font-size: 19px;
+            }
+
+            .networks{
+                transform: translateY(-170%);
+            }
+        }
+    }
+}
+
+

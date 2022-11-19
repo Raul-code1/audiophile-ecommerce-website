@@ -1,0 +1,117 @@
+@import '../../index.scss';
+
+
+.best-gear-section{
+    height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+
+
+
+    .best-gear-info{
+        height: 55%;
+        padding: 25px;
+        text-align: center;
+        h2{
+            font-size: 35px;
+            span{
+                color: $orangePrimary;
+            }
+        }
+
+        p{
+            font-size: 14px;
+            padding-top: 10px;
+            color:grey;
+
+        }
+    }
+
+    .image-box{
+        height: 45%;
+        background: url('../../assets/shared/mobile/image-best-gear.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 20px;
+        overflow: hidden;
+        border-radius: 10px;
+        
+    }
+    
+    
+}
+
+
+@media screen and ( min-width:767px ) {
+    
+    .best-gear-section{
+        height: 80vh;
+
+
+        .best-gear-info{
+            padding: 25px  80px;
+            height: 60%;
+            h2{
+                font-size: 45px;
+            }
+            
+            p{
+                font-size: 20px;
+            }
+        }
+        
+        .image-box{
+            height: 40%;
+            background: url('../../assets/shared/tablet/image-best-gear.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+        }
+        
+    }
+}
+
+
+@media screen and ( min-width:1024px ) {
+    
+    .best-gear-section{
+        height: 80vh;
+        width: 100%;
+        padding: 50px;
+        flex-direction: row;
+        
+        
+        .best-gear-info{
+            width: 57%;
+            height: 100%;
+            text-align: justify;
+            padding-top: 100px;
+            padding-right: 150px;    
+            h2{
+                font-size: 40px;
+                padding-right: 170px;
+                padding-bottom: 20px;
+            }
+
+            p{
+                font-size: 17px;
+            }
+        }
+        
+        .image-box{
+            background: url('../../assets/shared/desktop/image-best-gear.jpg');
+            background-size: cover;
+            background-position: left;
+            background-repeat: no-repeat;
+            width: 32%;
+            height: 100%;
+            margin: 0;
+            border-radius: 5px;
+            
+        }
+
+
+    }
+}

@@ -1,0 +1,121 @@
+@import '../../index.scss';
+
+
+.others-container{
+
+    margin: 10px;
+
+    h4{
+        text-align: center;
+        padding: 50px  0px;
+        font-size: 25px;
+    }
+
+    .products-container{
+
+        .product{
+            width: 100%;
+            text-align: center;
+            
+            .image-container{
+                width: 100%;
+                
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+    
+                .tablet,.desktop{
+                    display: none;
+                }
+            }
+
+            h5{
+                padding: 20px 0px;
+                font-size: 24px;
+            }
+
+            button{
+                margin: 15px 0px ;
+                @include button1(); padding: 10px 15px;
+            }
+
+            button:hover{
+                opacity: 0.8;
+                transition: all 0.4s ease-in-out;
+            }
+
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+/* RESPONSIVE DESIGN */
+
+@media screen and ( min-width:767px ) {
+    
+.others-container{
+
+    margin: 30px;
+
+    .products-container{
+
+        display: flex;
+        gap: 20px;
+
+        .product{
+
+            .image-container{
+                .mobile{
+                    display:none;
+                }
+
+                .tablet{
+                    display:block;
+                }
+            }
+        }
+    }
+
+}
+
+
+}
+
+
+
+@media screen and ( min-width:1024px ) {
+        
+.others-container{
+
+        padding: 20px 260px;
+
+
+    .products-container{
+
+        .product{
+            .image-container{
+
+                .tablet{
+                    display: none;
+                }
+
+                .desktop{
+                    display: block;
+                }
+            }
+        }
+
+    }
+
+}
+
+
+}

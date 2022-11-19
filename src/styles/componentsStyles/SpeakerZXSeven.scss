@@ -1,0 +1,78 @@
+@import '../../index.scss';
+
+.zx-sevene-speaker{
+    background: url('../../assets/home/mobile/image-speaker-zx7.jpg');
+    height: 60vh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    align-items: center;
+
+    div{
+        h2{
+            font-size: 30px;
+        }
+
+        button{
+            border: 1px solid black; 
+            padding: 8px 20px;
+            font-weight: bold;
+            margin: 10px;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: black;
+            color: $whitePrimary;
+            transition: all 0.4s ease;
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and ( min-width:767px ) {
+    .zx-sevene-speaker{
+        background: url('../../assets/home/tablet/image-speaker-zx7.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        height: 35vh;
+        padding-left: 50px;
+
+    }
+    
+}
+
+@media screen and ( min-width:1024px ) {
+    .zx-sevene-speaker{
+        background: url('../../assets/home/desktop/image-speaker-zx7.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: left;
+        height: 50vh;
+        margin: 14px 30px;
+        padding-left: 150px;
+
+        div{
+            h2{
+                font-size: 40px;
+
+            }
+        }
+    }
+}

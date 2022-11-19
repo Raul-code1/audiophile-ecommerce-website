@@ -1,0 +1,27 @@
+@import './_variables';
+
+/* Buttons styles */
+@mixin button1 {
+    background-color: $orangePrimary;
+    color: $whitePrimary;
+    border: none;
+    cursor: pointer;
+
+}
+
+@mixin button2 {
+    background-color: $whitePrimary;
+    color: $blackPrimary;
+    border: none;
+    cursor: pointer;
+
+}
+
+
+
+@mixin button3 {
+    background-color: $lightGrey;
+    color:grey;
+    border: none;
+    cursor: pointer;
+}

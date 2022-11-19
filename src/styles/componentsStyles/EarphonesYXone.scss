@@ -1,0 +1,98 @@
+@import '../../index.scss';
+
+
+.yx-one-earphones{
+    height: 70vh ;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    overflow: hidden;
+    
+    .image-container{
+        height: 40%;
+        background: url('../../assets/home/mobile/image-earphones-yx1.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 5px;
+        
+    }
+    
+    .info{
+        height: 40%;
+        background-color: $lightGrey;
+        padding: 50px  ;
+        border-radius: 5px;
+
+        h2{
+            font-size:25px;
+        }
+
+        button{
+            margin-top: 20px;
+            border: 1px solid black;
+            padding: 8px 20px;
+            font-weight: bold;;
+        }
+
+        button:hover{
+            background-color:black;
+            color:white;
+            transition: all 0.4s ease-in-out;
+            cursor: pointer;
+        }
+
+    }
+}
+
+
+@media screen and ( min-width:767px ) {
+    .yx-one-earphones{
+        flex-direction: row;
+        height: 30vh;
+        gap: 0%;
+        
+        .image-container{ 
+            background: url('../../assets/home/tablet/image-earphones-yx1.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height:100%;
+            width: 50%;
+        }
+        
+        .info{
+            height:100%;
+            width: 50%;
+            padding-top: 70px;
+
+        }
+    }
+}
+
+
+@media screen and ( min-width:1024px ) {
+    .yx-one-earphones{
+        margin: 10px 30px;
+        gap: 1%;
+        justify-content: space-between;
+        height: 40vh;
+        margin-bottom: 100px;
+
+        .image-container{ 
+            background: url('../../assets/home/desktop/image-earphones-yx1.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height:100%;
+            width: 50%;
+        }
+        
+        .info{
+            height:100%;
+            width: 50%;
+
+        }
+    }
+}
