@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 
 import { Product } from "../../interfaces/Products";
@@ -14,7 +14,12 @@ interface Props {
 export const ProductPrice:FC<Props> = ({ product  }) => {
 
     const navigate=useNavigate();    
-    const { addingItemsToCart }=useCartSlice();
+    const {  gettingProductQuantity,productQuantity,startIncreasingQuantity,items,startDecreasingQuantity }=useCartSlice();
+
+    useEffect(() => {  
+        gettingProductQuantity( product?.id )
+    }, [items])
+  
 
   return (
     <>
@@ -35,13 +40,15 @@ export const ProductPrice:FC<Props> = ({ product  }) => {
             <p className="description" >{ product?.description }</p>
             <div className="price">${ product?.price }</div>
             <div className="amount">
-                <div> 
-                    <span className="operations">-</span>
-                    <span>{ product?.amount }</span>
-                    <span className="operations">+</span>
-                </div>
+               {
+                productQuantity>0 &&     <div> 
+                                            <span onClick={()=>startDecreasingQuantity( product?.id )}  className="operations">-</span>
+                                            <span>{ productQuantity }</span>
+                                            <span onClick={()=>startIncreasingQuantity( product?.id )} className="operations">+</span>
+                                        </div>
+               }
 
-                <button onClick={()=>addingItemsToCart( product )} > ADD TO CART </button>
+                <button onClick={()=>startIncreasingQuantity( product?.id )} > ADD TO CART </button>
             </div>
 
         </div>

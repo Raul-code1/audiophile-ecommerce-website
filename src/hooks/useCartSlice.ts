@@ -1,18 +1,42 @@
+import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from './useStoreSateDispatch';
 
-import { Product } from '../interfaces/Products';
-import { addCartItem, removeAllItems } from '../store/cart/cartSlice';
+import { dereasingQuantity, getProductQuantity, getTotalCount, increasingQuantity, removeAllItems } from '../store/cart/cartSlice';
 
-export const useCartSlice = () => {
+export const useCartSlice = ( id?:number ) => {
 
 
-    const { items,totalCount,totalPrice }=useAppSelector(( state )=>state.cart);
+    const { totalCount,totalPrice,
+
+        /* DESPUEEES */
+            productQuantity,items }=useAppSelector(( state )=>state.cart);
+
+
     const dispatch=useAppDispatch();
 
 
-    const addingItemsToCart = ( product:Product ) => {
-        dispatch( addCartItem( product ) )
-    };
+    const gettingProductQuantity =( id:number )=>{
+        dispatch( getProductQuantity( id ) );
+    }
+
+    const startIncreasingQuantity=( id:number )=>{
+        dispatch( increasingQuantity( id ) )
+    }
+
+    const startDecreasingQuantity=( id:number )=>{
+        dispatch( dereasingQuantity( id ) )
+
+    }
+
+    const gettingTotalCount=()=>{
+        dispatch( getTotalCount() )
+    }
+    
+    useEffect(() => {
+        gettingTotalCount();
+      }, [items])
+      
+
 
     const removingAllItemsFromCart = (  ) =>{
         dispatch( removeAllItems() );
@@ -21,14 +45,24 @@ export const useCartSlice = () => {
 
     return{
         //*State
-        items,
+        
         totalCount,
         totalPrice,
 
+        /* Despues */
+        productQuantity,
+        items,
+
         //*Methods
-        addingItemsToCart,
         removingAllItemsFromCart,
 
+
+
+        /* DESPUES */
+        gettingProductQuantity,
+        startIncreasingQuantity,
+        startDecreasingQuantity,
+        gettingTotalCount
 
     }
 }

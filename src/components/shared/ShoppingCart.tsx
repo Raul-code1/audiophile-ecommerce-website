@@ -8,7 +8,13 @@ import { useCartSlice } from '../../hooks/useCartSlice';
 export const ShoppingCart = () => {
 
     const{ showShoppingCart,handleToggleSHoppingCart }=useUiSlice();
-    const { items,removingAllItemsFromCart }=useCartSlice();
+
+    const { removingAllItemsFromCart,totalPrice,totalCount,
+    /* DESPUEEES */
+    items
+    }=useCartSlice();
+
+  
 
   return (
     <div   className={`container ${( showShoppingCart ) && 'opacity'} `} >
@@ -17,20 +23,20 @@ export const ShoppingCart = () => {
 
             <div onClick={ handleToggleSHoppingCart }  className="close-btn" > <AiOutlineClose /> </div>
             <div className='header' >
-                <span>Cart{`(${items.length})`}</span>
+                <span>Cart{`(${totalCount})`}</span>
                 <span onClick={()=>removingAllItemsFromCart()} className="remove-all" > Remove all </span>
             </div>
 
             {
-                items.length===0 
+            items.length===0 
                 ? <p className="no-items" >You dont have any items 😥</p>
-                : items.map((item, index) => <CartItem  key={index} product={ item } />)
+                : items.map((item, index) => <CartItem  key={index} {... item } />)
 
             }
 
             <div className="total">
                 <div>Total</div>
-                <div>100000</div>
+                <div>${ totalPrice }</div>
             </div>
 
             <div className='btn' >

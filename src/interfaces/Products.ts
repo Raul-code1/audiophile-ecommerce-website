@@ -15,6 +15,7 @@ export interface Product {
     includes:      Include[];
     gallery:       Gallery;
     others:        Other[];
+    temporalAmount?:number;
 }
 
 export interface CategoryImage {

@@ -1,15 +1,27 @@
 import { FC } from 'react';
 
 import '../../styles/componentsStyles/CartItem.scss'
-import { Product } from '../../interfaces/Products';
+import products from '../../data.json';
+import { useCartSlice } from '../../hooks/useCartSlice';
 
 
 interface Props{
-    product:Product;  
+  id:number,
+  quantity:number, 
 }
 
 
-export const CartItem:FC<Props> = ({ product }) => {
+export const CartItem:FC<Props> = ({ id,quantity }) => {
+
+    const { productQuantity,startDecreasingQuantity,startIncreasingQuantity }=useCartSlice();
+
+    const product = products.find( item=> item.id === id);
+
+    if ( product===null )return null; 
+        
+    
+
+
   return (
     <div className="items">
     <div>
@@ -21,9 +33,10 @@ export const CartItem:FC<Props> = ({ product }) => {
             </div>
         </div>
         <div className='amount' >
-            <span> - </span>
-            <span> 1 </span>
-            <span> + </span>
+            <span onClick={()=>startDecreasingQuantity( id )} > - </span>
+            <span> { productQuantity
+             } </span>
+            <span onClick={()=>startIncreasingQuantity( id )} > + </span>
         </div>
     </div>
 </div>
