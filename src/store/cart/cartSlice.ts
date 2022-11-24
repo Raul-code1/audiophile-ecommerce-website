@@ -1,5 +1,5 @@
 import { createSlice,PayloadAction } from '@reduxjs/toolkit'
-import { Product } from '../../interfaces/Products';
+
 
 
 export type CartItem={
@@ -10,8 +10,6 @@ export type CartItem={
 interface CartState{
     items:CartItem[];
     totalCount:number;
-    totalPrice:number;
-    showUiCartTotal:boolean;
     productQuantity:number;
     increaseQuantity:any;
     decreaseQuantity:any;
@@ -21,8 +19,6 @@ interface CartState{
 const initialState: CartState = {
     items:[],
     totalCount:0,
-    totalPrice:0,
-    showUiCartTotal:false,
     productQuantity:0,
     increaseQuantity:null,
     decreaseQuantity:null,
@@ -33,10 +29,6 @@ export const cartSlice=createSlice({
     name:'cart',
     initialState,
     reducers:{
-        removeAllItems:( state )=>{
-            state.items=[];
-        },
-    
         getProductQuantity:( state,{ payload }:PayloadAction<number> )=>{
              state.productQuantity= state.items.find( item=> item.id===payload )?.quantity || 0 ;
         },
@@ -47,13 +39,13 @@ export const cartSlice=createSlice({
             }
            
             if ( state.items.find( item=> item.id===payload )===undefined ) {
-                state.items.push( newItem );
+                state.items.push( newItem ) /*  [...items,newItem]  */
             }else{
                 state.items.map( item=>{
                     if( item.id===payload ){
-                        item.quantity += 1
+                        item.quantity += 1  /*  {...item,cantidad: cantidad + 1}  */
                     }else{
-                         item;
+                        return item;
                     }
                 } )
             }
@@ -74,17 +66,22 @@ export const cartSlice=createSlice({
         },
         getTotalCount:( state )=>{
             state.totalCount= state.items.reduce( (total,item)=>item.quantity + total,0 )
-        }
+        },
+        removeAllItems:( state )=>{
+            state.items=[];
+        },
     }
     
 })
 
 
-export const{ removeAllItems,
-    /* DESPUEES */
+export const{
+    
+    removeAllItems,
     increasingQuantity,
     getProductQuantity,
     dereasingQuantity,
     getTotalCount
+
   }=cartSlice.actions;
 

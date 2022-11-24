@@ -1,18 +1,19 @@
 import { AiOutlineClose } from "react-icons/ai";
+import { useNavigate } from 'react-router-dom';
 
 import { useUiSlice } from "../../hooks/useUiSlice";
 import '../../styles/componentsStyles/ShoppingCart.scss';
 import { CartItem } from './CartItem';
 import { useCartSlice } from '../../hooks/useCartSlice';
+import products from '../../data.json'
 
 export const ShoppingCart = () => {
 
+    const navigate=useNavigate();
+
     const{ showShoppingCart,handleToggleSHoppingCart }=useUiSlice();
 
-    const { removingAllItemsFromCart,totalPrice,totalCount,
-    /* DESPUEEES */
-    items
-    }=useCartSlice();
+    const { removingAllItemsFromCart,totalCount, items }=useCartSlice();
 
   
 
@@ -36,11 +37,15 @@ export const ShoppingCart = () => {
 
             <div className="total">
                 <div>Total</div>
-                <div>${ totalPrice }</div>
+                <div>${ items.reduce(( total,cartItem )=>{
+                    const item = products.find(each=>each.id === cartItem.id)
+                    return total + (item?.price || 0) * cartItem.quantity },0) }</div>
             </div>
 
             <div className='btn' >
-                <button  onClick={ handleToggleSHoppingCart } >CHECKOUT</button>
+                {
+                    totalCount> 0 && <button  onClick={()=>navigate('/checkout')} >CHECKOUT</button>
+                }
             </div>
 
         </div>

@@ -1,4 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
+
+
 import { cartSlice } from './cart/cartSlice'
 import { uiSlice } from './ui/uiSlice'
 

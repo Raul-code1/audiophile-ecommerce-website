@@ -5,6 +5,7 @@ import logo from '../../assets/shared/desktop/logo.svg';
 import menuBtn from "../../assets/shared/tablet/icon-hamburger.svg";
 import { useUiSlice } from "../../hooks/useUiSlice";
 import '../../styles/componentsStyles/NavBar.scss';
+import { useCartSlice } from '../../hooks/useCartSlice';
 
 
 export const NavBar = () => {
@@ -13,6 +14,7 @@ export const NavBar = () => {
 
   const { handleToggleMenu,handleToggleSHoppingCart }=useUiSlice();
 
+  const  { totalCount }= useCartSlice();
   
 
   return (
@@ -27,7 +29,12 @@ export const NavBar = () => {
         <li onClick={()=>navigate('/earphones')} >EARPHONES</li>
       </ul>
 
-      <div  onClick={ handleToggleSHoppingCart } className="shoppingCart" > <FiShoppingCart /> </div>
+      <div  onClick={ handleToggleSHoppingCart } className="shoppingCart" > 
+            <FiShoppingCart />
+            {
+              totalCount>0 && <span className=" counter-item "> { totalCount }</span>
+            }
+      </div>
     </nav>
   )
 }

@@ -1,6 +1,6 @@
 import { Routes,Route,Navigate } from "react-router-dom";
 
-import { HeadPhonesPage, HomePage,EarphonesPage,SpeakersPage, ProductDetail  } from "../pages";
+import { HeadPhonesPage, HomePage,EarphonesPage,SpeakersPage, ProductDetail, Checkout  } from "../pages";
 
 
 export const AppRouter = () => {
@@ -12,6 +12,7 @@ export const AppRouter = () => {
         <Route path="/earphones" element={ <EarphonesPage  />  }  />
         <Route path="/product/:name" element={ <ProductDetail />    }  />
         <Route path="/*" element={ <Navigate to='/' /> }  />
+        <Route path="/checkout" element={ <Checkout />    }  />
     </Routes>
 
   )

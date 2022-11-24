@@ -1,0 +1,38 @@
+@import '../../index.scss';
+
+
+.check-out-view-container{
+    padding: 10px;
+}
+
+
+.back-btn-checkout{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $orangePrimary;
+    color: white;
+    margin: 20px;
+    cursor: pointer;
+
+    span{
+        font-size: 20px;
+    }
+}
+
+
+
+
+@media screen and ( min-width:1024px ) {
+    
+    .check-out-view-container{
+        display: flex;
+        padding: 100px  150px;
+    }
+    
+
+    .back-btn-checkout{
+        margin: 20px 200px ;
+    }
+}

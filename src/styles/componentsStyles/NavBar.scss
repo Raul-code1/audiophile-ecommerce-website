@@ -1,5 +1,10 @@
 @import '../../index.scss';
 
+.counter-item{
+    color: $orangePrimary;
+    font-size: 20px;
+}
+
 .navbar{
     background-color: $blackPrimary;
     color: $whitePrimary;

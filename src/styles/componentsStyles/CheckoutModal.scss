@@ -1,0 +1,126 @@
+@import '../../index.scss';
+
+
+
+
+.checkout-modal-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    section{
+        background-color: white;
+        width: 80%;
+        padding: 10px;
+        border-radius: 10px;
+        
+        .check-icon{
+            color: $orangePrimary;
+            font-size: 30px;
+        }
+        
+        .info{
+            p{
+                padding: 10px;
+            }
+
+            .thanks-for-order-message{
+                font-weight: bold;
+            }
+            
+            .confirmation{
+                color: grey;
+                font-size: 12px;
+            }
+        }
+        
+        .items-section{
+            border-radius: 12px  ;
+            overflow: hidden;
+            .items{
+                background-color:  $lightGrey;
+            }
+            .grand-total-modal{
+                background-color: black;
+                color: white;
+                padding: 10px 30px ;
+                border-radius:  0px 0px 10px 10px ;
+                margin-bottom: 20px;
+                p{
+                    color: grey;
+                    padding-top: 10px;
+                }
+
+                .price{
+                    color: $whitePrimary;
+                }
+            }
+        }
+
+        .btn-container{
+            width: 100%;
+            text-align: center;
+
+            button{
+                @include button1();
+                padding: 10px 70px;
+                margin:5px ;
+            }
+        }
+
+    }
+
+
+    
+
+}
+
+.show-modal{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+@media screen and ( min-width:767px ) {
+    .checkout-modal-container{
+        section{
+            width:60% ;
+
+            .items-section{
+                display: flex;
+                margin-bottom: 20px;
+                align-items: center;
+                background-color: black;
+                .items{
+                    background-color: $lightGrey;
+                    height: 100%;
+                    border-radius: 10px 0px 0px 10px ;
+                }
+                .grand-total-modal{
+                    border-radius: 0px 10px 10px 0px;
+                    height: 100%;
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media screen and ( min-width:1024px ) {
+    .checkout-modal-container{
+        section{
+            width:30% ;
+            
+        }
+    }
+}

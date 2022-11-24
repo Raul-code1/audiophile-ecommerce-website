@@ -6,10 +6,7 @@ import { dereasingQuantity, getProductQuantity, getTotalCount, increasingQuantit
 export const useCartSlice = ( id?:number ) => {
 
 
-    const { totalCount,totalPrice,
-
-        /* DESPUEEES */
-            productQuantity,items }=useAppSelector(( state )=>state.cart);
+    const { totalCount,productQuantity,items }=useAppSelector(( state )=>state.cart);
 
 
     const dispatch=useAppDispatch();
@@ -47,7 +44,7 @@ export const useCartSlice = ( id?:number ) => {
         //*State
         
         totalCount,
-        totalPrice,
+
 
         /* Despues */
         productQuantity,

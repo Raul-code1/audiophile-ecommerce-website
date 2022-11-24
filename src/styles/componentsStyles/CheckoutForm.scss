@@ -1,0 +1,160 @@
+@import '../../index.scss';
+
+
+.submit{
+    @include button1();
+    padding: 10px 20px;
+}
+
+.form-container{
+    padding: 10px;
+    h6{
+        font-size: 28px;
+        padding-bottom: 10px;
+    }
+    
+    p{
+        color:$orangePrimary;
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+
+
+    form{
+        div{
+            .inputs-container{
+                padding: 10px;
+                div{
+                    margin-bottom: 10px;
+                    .inputs{
+                        width: 100%;
+                        padding: 15px 10px;
+                        border-radius: 5px;
+                        outline: none;
+                        border: 1px solid grey;
+                        margin-top: 7px;
+                    }
+                }
+            }     
+
+
+            .payment-details{
+                padding: 10px;
+                .payment-method{
+                    padding: 10px 0px;
+                    font-size: 18px;
+                }
+                
+                .checkbox{
+                    display: flex;
+                    gap: 20px;
+                    padding: 10px;
+                    padding-left: 20px;
+                    border: 1px solid grey;
+                    border-radius: 5px;
+                    margin-top: 10px;
+                }
+            }
+            
+            .e-money-options{
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding-top: 20px;
+                div{
+                    .e-money-inputs{
+                        width: 100%;
+                        padding: 10px;
+                        border-radius: 5px;
+                        outline: none;
+                        border: 1px solid grey;
+                        margin-top: 7px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and ( min-width:767px ) {
+    .form-container{
+        padding: 50px;
+        form{
+            div{
+                .inputs-container{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr 1fr;
+
+                    column-gap: 20px;
+
+                    div,.your-address,.zip-code{
+                        margin-bottom: 10px;
+
+                    }
+
+
+                    .your-address{
+                        grid-column:1/3 ;
+                    }
+
+                    .zip-code{
+                        grid-row: 2/2;
+                    }
+
+
+
+                 
+
+                   
+                }     
+
+                .payment-details{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr ;
+                    column-gap: 20px;
+                    row-gap: 20px;
+
+                 
+                 .checkbox{
+                    align-items: center;
+                    justify-content: flex-start;
+                    height: 100%;
+                    gap: 10px;
+                    
+                } 
+
+                .cash-on-delivery{
+                    grid-column: 2/3;
+                }
+
+                }
+
+                .e-money-options{
+                   flex-direction: row;
+                    justify-content: space-between;
+                    
+                    div{
+                        width: 50%;
+                        
+                    }
+
+                }
+            }
+        }
+
+
+
+    }
+}
+
+
+@media screen and ( min-width:1024px ) {
+    .form-container{
+        width: 60%;
+    }
+
+}

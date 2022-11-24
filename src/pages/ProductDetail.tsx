@@ -26,6 +26,8 @@ export const ProductDetail = () => {
 
        <OthersProducts  product={ product }  />
       
+    
+
     </ProductsPagesLayout>
   )
 }

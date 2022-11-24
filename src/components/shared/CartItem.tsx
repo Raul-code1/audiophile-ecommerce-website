@@ -34,8 +34,7 @@ export const CartItem:FC<Props> = ({ id,quantity }) => {
         </div>
         <div className='amount' >
             <span onClick={()=>startDecreasingQuantity( id )} > - </span>
-            <span> { productQuantity
-             } </span>
+            <span> { quantity } </span>
             <span onClick={()=>startIncreasingQuantity( id )} > + </span>
         </div>
     </div>
